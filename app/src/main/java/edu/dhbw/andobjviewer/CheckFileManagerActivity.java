@@ -163,7 +163,7 @@ public class CheckFileManagerActivity extends Activity {
         Intent intent = new Intent("org.openintents.action.PICK_FILE");
         intent.setData(Uri.parse("file:///sdcard/"));
         intent.putExtra("org.openintents.extra.TITLE", res.getText(
-        		R.string.select_model_file));
+        		R.string.custom_model));
         startActivityForResult(intent, PICK_FILE);
     }
     

@@ -45,7 +45,7 @@ public class ModelChooser extends ListActivity {
 		AssetManager am = getAssets();
 		Vector<Item> models = new Vector<Item>();
 		Item item = new Item();
-		item.text = getResources().getString(R.string.choose_a_model);
+		item.text = getResources().getString(R.string.select_model_file);
 		item.type = Item.TYPE_HEADER;
 		models.add(item);
 		
@@ -76,8 +76,8 @@ public class ModelChooser extends ListActivity {
 		item.type = Item.TYPE_HEADER;
 		models.add(item);
 		item = new Item();
-		item.text = getResources().getString(R.string.choose_custom_model);
-		item.icon = new Integer(R.drawable.open);
+		item.text = getResources().getString(R.string.custom_model_file);
+		item.icon = R.drawable.open;
 		models.add(item);
 		item = new Item();
 		item.text = getResources().getString(R.string.help);
@@ -85,7 +85,7 @@ public class ModelChooser extends ListActivity {
 		models.add(item);
 		item = new Item();
 		item.text = getResources().getString(R.string.instructions);
-		item.icon = new Integer(R.drawable.help);
+		item.icon = R.drawable.help;
 		models.add(item);
 		
 		/*setListAdapter(new ArrayAdapter<String>(this,
@@ -99,7 +99,7 @@ public class ModelChooser extends ListActivity {
 		super.onListItemClick(l, v, position, id);
 		Item item = (Item) this.getListAdapter().getItem(position);
 		String str = item.text;
-		if(str.equals(getResources().getString(R.string.choose_custom_model))) {
+		if(str.equals(getResources().getString(R.string.select_model_file))) {
 			//start oi file manager activity
 			Intent intent = new Intent(ModelChooser.this, CheckFileManagerActivity.class);
             startActivity(intent);

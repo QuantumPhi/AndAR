@@ -3,11 +3,10 @@
     <!-- From: file:/C:/Users/Tarik/git/AndARModelViewer/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="android_markt_not_avail">Android market is not available, you need install to OI File manager manually.</string>
-    <string name="app_description">AndAR Model Viewer allows you to view wavefront obj models on an Augmented Reality marker.</string>
-    <string name="app_name">AndAR Model Viewer</string>
-    <string name="choose_a_model">Choose a model:</string>
-    <string name="choose_custom_model">Select a model file</string>
-    <string name="custom_model">Custom model:</string>
+    <string name="app_description">ScalAR Stories allows for an entirely new perspective on storytelling.</string>
+    <string name="app_name">ScalAR Stories</string>
+    <string name="custom_model">More stories:</string>
+    <string name="custom_model_file">More stories coming soon!</string>
     <string name="error_unknown_pixel_format">UNKNOWN PIXEL FORMAT</string>
     <string name="file_doesnt_exist">This file doesn\'t exist!</string>
     <string name="help">Help:</string>
@@ -19,9 +18,14 @@
     <string name="scale">scale</string>
     <string name="screenshotfailed">Failed to save screenshot: </string>
     <string name="screenshotsaved">Screenshot saved!</string>
-    <string name="select_model_file">Select a model file:</string>
+    <string name="select_model_file">Story #1: The Jackal and The Wardrum</string>
     <string name="take_screenshot">Take a screenshot</string>
     <string name="translate">translate</string>
-    <string name="unknown_file_type">Unknown file type!</string>
+    <string name="unknown_file_type">UNKNOWN FILE TYPE</string>
     <string name="wrong_file">Select an obj model file. (.obj)</string>
+    <!-- From: file:/C:/Users/Tarik/git/AndARModelViewer/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="android:Theme.Holo">
+        <!-- Customize your theme here -->
+    </style>
 </resources>

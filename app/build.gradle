@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
+    compileSdkVersion 21
     buildToolsVersion "21.1.0"
 
     defaultConfig {
         applicationId "edu.dhbw.andarmodelviewer"
-        minSdkVersion 3
-        targetSdkVersion 4
+        minSdkVersion 13
+        targetSdkVersion 21
     }
 
     buildTypes {
