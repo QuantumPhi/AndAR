@@ -39,7 +39,7 @@ public class CustomActivity extends AndARActivity {
 		try {
 			artoolkit = super.getArtoolkit();
 			someObject = new CustomObject
-				("test", "patt.hiro", 80.0, new double[]{0,0});
+				("test", "barcode.patt", 80.0, new double[]{0,0});
 			artoolkit.registerARObject(someObject);
 			someObject = new CustomObject
 			("test", "android.patt", 80.0, new double[]{0,0});
