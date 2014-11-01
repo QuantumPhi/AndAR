@@ -57,8 +57,8 @@ public class ModelChooser extends ListActivity {
 				if(currFileName.endsWith(".obj")) { 
 					item = new Item();
 					String trimmedFileName = currFileName.substring(0,currFileName.lastIndexOf(".obj"));
-					item.text = trimmedFileName;
-					models.add(item);
+                    item.text = trimmedFileName;
+                    models.add(item);
 					if(modelFilesList.contains(trimmedFileName+".jpg")) {
 						InputStream is = am.open("models/"+trimmedFileName+".jpg");
 						item.icon=(BitmapFactory.decodeStream(is));
