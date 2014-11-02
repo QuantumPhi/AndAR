@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/Tarik/git/AndARModelViewer/app/src/main/res/values-de/strings.xml -->
+    <!-- From: file:/C:/Users/Tarik/git/AndAR/app/src/main/res/values-de/strings.xml -->
     <eat-comment/>
     <string name="android_markt_not_avail">Der Android Marktplatz ist nicht verfügbar, daher müssen Sie den OI File Manager von Hand installieren.</string>
     <string name="app_description">AndAR Model Viewer ermöglicht es wavefront obj 3D-Modelle auf Augmented Reality Markern darzustellen.</string>

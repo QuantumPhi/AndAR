@@ -21,11 +21,11 @@ public final class R {
         public static final int translate=0x7f020007;
     }
     public static final class id {
-        public static final int InfoText=0x7f060004;
-        public static final int choose_model_row_icon=0x7f060000;
-        public static final int choose_model_row_text=0x7f060001;
-        public static final int instructions_webview=0x7f060002;
-        public static final int list_header_title=0x7f060003;
+        public static final int InfoText=0x7f050004;
+        public static final int choose_model_row_icon=0x7f050000;
+        public static final int choose_model_row_text=0x7f050001;
+        public static final int instructions_webview=0x7f050002;
+        public static final int list_header_title=0x7f050003;
     }
     public static final class layout {
         public static final int choose_model_row=0x7f030000;
@@ -58,10 +58,5 @@ public final class R {
         public static final int translate=0x7f040012;
         public static final int unknown_file_type=0x7f040013;
         public static final int wrong_file=0x7f040014;
-    }
-    public static final class style {
-        /**  Customize your theme here 
-         */
-        public static final int AppTheme=0x7f050000;
     }
 }

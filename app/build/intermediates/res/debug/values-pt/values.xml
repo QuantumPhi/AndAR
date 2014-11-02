@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/Tarik/git/AndARModelViewer/app/src/main/res/values-pt/strings.xml -->
+    <!-- From: file:/C:/Users/Tarik/git/AndAR/app/src/main/res/values-pt/strings.xml -->
     <eat-comment/>
     <string name="android_markt_not_avail">A loja Android não está disponível, você precisa instalar o OI File Manager manualmente.</string>
     <string name="app_description"> AndAR permite visualizar modelos wavefront (.obj) em marcadores de Realidade Aumentada.</string>

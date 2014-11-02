@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="C:\Users\Tarik\git\AndAR\app\src\androidTest\assets"/></dataSet><dataSet config="arm"><source path="C:\Users\Tarik\git\AndAR\app\src\androidTestArm\assets"/></dataSet><dataSet config="gingerbread"><source path="C:\Users\Tarik\git\AndAR\app\src\androidTestGingerbread\assets"/></dataSet></merger>

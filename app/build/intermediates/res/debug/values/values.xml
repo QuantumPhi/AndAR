@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/Tarik/git/AndARModelViewer/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Tarik/git/AndAR/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="android_markt_not_avail">Android market is not available, you need install to OI File manager manually.</string>
     <string name="app_description">ScalAR Stories allows for an entirely new perspective on storytelling.</string>
@@ -23,9 +23,4 @@
     <string name="translate">translate</string>
     <string name="unknown_file_type">UNKNOWN FILE TYPE</string>
     <string name="wrong_file">Select an obj model file. (.obj)</string>
-    <!-- From: file:/C:/Users/Tarik/git/AndARModelViewer/app/src/main/res/values/styles.xml -->
-    <eat-comment/>
-    <style name="AppTheme" parent="android:Theme.Holo">
-        <!-- Customize your theme here -->
-    </style>
 </resources>

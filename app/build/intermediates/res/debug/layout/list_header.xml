@@ -8,4 +8,4 @@
     android:paddingTop="2dip"  
     android:paddingBottom="2dip"  
     android:paddingLeft="5dip"  
-    style="?android:attr/listSeparatorTextViewStyle" /><!-- From: file:/C:/Users/Tarik/git/AndARModelViewer/app/src/main/res/layout/list_header.xml -->
+    style="?android:attr/listSeparatorTextViewStyle" /><!-- From: file:/C:/Users/Tarik/git/AndAR/app/src/main/res/layout/list_header.xml -->

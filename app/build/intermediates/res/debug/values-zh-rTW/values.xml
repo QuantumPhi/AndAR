@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/Tarik/git/AndARModelViewer/app/src/main/res/values-zh-rTW/strings.xml -->
+    <!-- From: file:/C:/Users/Tarik/git/AndAR/app/src/main/res/values-zh-rTW/strings.xml -->
     <eat-comment/>
     <string name="android_markt_not_avail">Android 市場不可用，你需要手動安裝OI檔案管理器。</string>
     <string name="app_description">AndAR Model Viewer允許你在一個現實增強的裝置中檢視Wavefront目標模型。</string>
