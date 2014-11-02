@@ -1,4 +1,7 @@
+package com.skylion.speech;
+
 import android.media.MediaPlayer;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class Narrator {
-    public static MediaPlayer player = new MediaPlayer();
+    public MediaPlayer player = new MediaPlayer();
 
     public Narrator(InputStream is) {
         File temp;
@@ -22,9 +25,15 @@ public class Narrator {
             fos = new FileOutputStream(temp);
             buffer = new byte[1024];
 
-            while((len = is.read(buffer)) != -1)
-                fos.write(buffer, 0, len);
+            Log.i("FOOBAR", "" + (is == null));
 
+            len= is.read(buffer) ;
+
+            while(len != -1)
+            {
+                fos.write(buffer, 0, len);
+                len=is.read(buffer);
+            }
             fis = new FileInputStream(temp);
             player.setDataSource(fis.getFD());
         } catch(IOException e) {

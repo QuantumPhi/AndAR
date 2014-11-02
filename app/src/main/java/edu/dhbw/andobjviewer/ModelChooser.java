@@ -1,7 +1,13 @@
 package edu.dhbw.andobjviewer;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.MalformedInputException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -32,6 +38,9 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.skylion.speech.Narrator;
+import com.skylion.speech.Synthesiser;
+
 /**
  * allows you to choose either one of the internal models
  * or choose an file on the sd card through another activity
@@ -39,6 +48,9 @@ import android.widget.TextView;
  *
  */
 public class ModelChooser extends ListActivity {
+    public static Narrator narrator;
+    public static String[] excerptText;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,8 +60,8 @@ public class ModelChooser extends ListActivity {
 		item.text = getResources().getString(R.string.select_model_file);
 		item.type = Item.TYPE_HEADER;
 		models.add(item);
-		
-		try {
+
+        try {
 			String[] modelFiles = am.list("models");
 			List<String> modelFilesList = Arrays.asList(modelFiles);
 			for (int i = 0; i < modelFiles.length; i++) {
@@ -97,6 +109,24 @@ public class ModelChooser extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
+        if(excerptText == null) {
+            List<String> lineList;
+            String line;
+            BufferedReader reader;
+            try {
+                lineList = new ArrayList<String>();
+                reader = new BufferedReader(new InputStreamReader(getAssets().open("excerpt.txt")));
+
+                while((line = reader.readLine()) != null)
+                    lineList.add(line);
+
+                excerptText = lineList.toArray(new String[lineList.size()]);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 		Item item = (Item) this.getListAdapter().getItem(position);
 		String str = item.text;
 		if(str.equals(getResources().getString(R.string.select_model_file))) {
@@ -108,6 +138,35 @@ public class ModelChooser extends ListActivity {
 			startActivity(new Intent(ModelChooser.this, InstructionsActivity.class));
 		} else {
 			//load the selected internal file
+            final String lang = excerptText[0].substring(excerptText[0].lastIndexOf(' '));
+            int num = 0;
+            switch(num = Integer.parseInt(str.substring("Scene".length()))) {
+                case 1:
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            speak(lang, excerptText[1]);
+                        }
+                    }).start();
+                    break;
+                case 2:
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            speak(lang, excerptText[2]);
+                        }
+                    }).start();
+                    break;
+                case 3:
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            speak(lang, excerptText[3]);
+                        }
+                    }).start();
+                    break;
+            }
+
 			Intent intent = new Intent(ModelChooser.this, AugmentedModelViewerActivity.class);
             intent.putExtra("name", str+".obj");
             intent.putExtra("type", AugmentedModelViewerActivity.TYPE_INTERNAL);
@@ -115,6 +174,22 @@ public class ModelChooser extends ListActivity {
             startActivity(intent);
 		}
 	}
+
+    private void speak(String language, String text){
+        Synthesiser synth = new Synthesiser(language);
+        InputStream is;
+        try {
+            is = synth.getMP3Data(text);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        if(narrator != null)
+            narrator.stop();
+        narrator = new Narrator(is);
+        narrator.start();
+    }
 	
 	class ModelChooserListAdapter extends BaseAdapter{
 		

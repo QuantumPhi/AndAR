@@ -1,18 +1,5 @@
 package edu.dhbw.andobjviewer;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URI;
-import java.util.Date;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -28,6 +15,18 @@ import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.net.URI;
+import java.util.Date;
+
 import edu.dhbw.andar.ARToolkit;
 import edu.dhbw.andar.AndARActivity;
 import edu.dhbw.andar.exceptions.AndARException;
@@ -149,7 +148,13 @@ public class AugmentedModelViewerActivity extends AndARActivity implements Surfa
 			new ModelLoader().execute();
 		}
     }
-    
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        ModelChooser.narrator.stop();
+    }
 	
     /**
      * Handles touch events.
@@ -212,12 +217,10 @@ public class AugmentedModelViewerActivity extends AndARActivity implements Surfa
     }
     
 	private class ModelLoader extends AsyncTask<Void, Void, Void> {
-		
-		
+
     	@Override
     	protected Void doInBackground(Void... params) {
-    		
-			Intent intent = getIntent();
+            Intent intent = getIntent();
 			Bundle data = intent.getExtras();
 			int type = data.getInt("type");
 			String modelFileName = data.getString("name");

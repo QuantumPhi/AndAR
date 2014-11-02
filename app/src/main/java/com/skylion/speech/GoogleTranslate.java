@@ -1,3 +1,5 @@
+package com.skylion.speech;
+
 import java.io.IOException;
 import java.io.Reader;
 import java.net.URL;
